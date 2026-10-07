@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00000000000000000000001 /* PicToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000001 /* PicToolApp.swift */; };
+		B00000000000000000000002 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000002 /* MainWindow.swift */; };
+		B00000000000000000000003 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000003 /* SettingsView.swift */; };
+		B00000000000000000000004 /* PixelSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000004 /* PixelSize.swift */; };
+		B00000000000000000000005 /* ResizeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000005 /* ResizeMode.swift */; };
+		B00000000000000000000006 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000006 /* ImageItem.swift */; };
+		B00000000000000000000007 /* ImportScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000007 /* ImportScanner.swift */; };
+		B00000000000000000000008 /* ImportPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000008 /* ImportPanel.swift */; };
+		B00000000000000000000009 /* ImportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000009 /* ImportStore.swift */; };
+		B0000000000000000000000A /* ImageQueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000A /* ImageQueueView.swift */; };
+		B0000000000000000000000B /* BatchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000B /* BatchConfiguration.swift */; };
+		B0000000000000000000000C /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000C /* ConfigurationView.swift */; };
+		B0000000000000000000000D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000D /* Localizable.xcstrings */; };
+		B0000000000000000000000E /* ResizeModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000F /* ResizeModeTests.swift */; };
+		B0000000000000000000000F /* WebPEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000013 /* WebPEncoder.swift */; };
+		B00000000000000000000010 /* WebPEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000015 /* WebPEncoderTests.swift */; };
+		B00000000000000000000011 /* libwebp/PicToolWebP.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F00000000000000000000014 /* libwebp/PicToolWebP.xcframework */; };
+		B00000000000000000000012 /* ImportScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000016 /* ImportScannerTests.swift */; };
+		B00000000000000000000013 /* ExportFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000017 /* ExportFormat.swift */; };
+		B00000000000000000000014 /* FilenameTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000018 /* FilenameTemplate.swift */; };
+		B00000000000000000000015 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000019 /* ImageProcessor.swift */; };
+		B00000000000000000000016 /* FilenameTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001A /* FilenameTemplateTests.swift */; };
+		B00000000000000000000017 /* ImageProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001B /* ImageProcessorTests.swift */; };
+		B00000000000000000000018 /* BatchProcessorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001C /* BatchProcessorStore.swift */; };
+		B00000000000000000000019 /* CropPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001D /* CropPolicy.swift */; };
+		B0000000000000000000001A /* CropPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001E /* CropPolicyTests.swift */; };
+		B0000000000000000000001B /* CropEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001F /* CropEditorView.swift */; };
+		B0000000000000000000001C /* DirectoryWritePreflight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000020 /* DirectoryWritePreflight.swift */; };
+		B0000000000000000000001D /* DirectoryWritePreflightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000021 /* DirectoryWritePreflightTests.swift */; };
+		B0000000000000000000001E /* RunLedger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000022 /* RunLedger.swift */; };
+		B0000000000000000000001F /* RunLedgerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000023 /* RunLedgerTests.swift */; };
+		B00000000000000000000020 /* BoundedTaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000024 /* BoundedTaskGroup.swift */; };
+		B00000000000000000000021 /* BoundedTaskGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000025 /* BoundedTaskGroupTests.swift */; };
+		B00000000000000000000022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000026 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D00000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000000000000000000010;
+			remoteInfo = PicTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F00000000000000000000001 /* PicToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicToolApp.swift; sourceTree = "<group>"; };
+		F00000000000000000000002 /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		F00000000000000000000003 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F00000000000000000000004 /* PixelSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelSize.swift; sourceTree = "<group>"; };
+		F00000000000000000000005 /* ResizeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeMode.swift; sourceTree = "<group>"; };
+		F00000000000000000000006 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		F00000000000000000000007 /* ImportScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportScanner.swift; sourceTree = "<group>"; };
+		F00000000000000000000008 /* ImportPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPanel.swift; sourceTree = "<group>"; };
+		F00000000000000000000009 /* ImportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportStore.swift; sourceTree = "<group>"; };
+		F0000000000000000000000A /* ImageQueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageQueueView.swift; sourceTree = "<group>"; };
+		F0000000000000000000000B /* BatchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchConfiguration.swift; sourceTree = "<group>"; };
+		F0000000000000000000000C /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
+		F0000000000000000000000D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F0000000000000000000000E /* PicTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicTool.entitlements; sourceTree = "<group>"; };
+		F0000000000000000000000F /* ResizeModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeModeTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000010 /* PixShift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixShift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00000000000000000000011 /* PicToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00000000000000000000012 /* PicTool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicTool-Bridging-Header.h"; sourceTree = "<group>"; };
+		F00000000000000000000013 /* WebPEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPEncoder.swift; sourceTree = "<group>"; };
+		F00000000000000000000014 /* libwebp/PicToolWebP.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libwebp/PicToolWebP.xcframework; sourceTree = "<group>"; };
+		F00000000000000000000015 /* WebPEncoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPEncoderTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000016 /* ImportScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportScannerTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000017 /* ExportFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFormat.swift; sourceTree = "<group>"; };
+		F00000000000000000000018 /* FilenameTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilenameTemplate.swift; sourceTree = "<group>"; };
+		F00000000000000000000019 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		F0000000000000000000001A /* FilenameTemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilenameTemplateTests.swift; sourceTree = "<group>"; };
+		F0000000000000000000001B /* ImageProcessorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessorTests.swift; sourceTree = "<group>"; };
+		F0000000000000000000001C /* BatchProcessorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchProcessorStore.swift; sourceTree = "<group>"; };
+		F0000000000000000000001D /* CropPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropPolicy.swift; sourceTree = "<group>"; };
+		F0000000000000000000001E /* CropPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropPolicyTests.swift; sourceTree = "<group>"; };
+		F0000000000000000000001F /* CropEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropEditorView.swift; sourceTree = "<group>"; };
+		F00000000000000000000020 /* DirectoryWritePreflight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryWritePreflight.swift; sourceTree = "<group>"; };
+		F00000000000000000000021 /* DirectoryWritePreflightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryWritePreflightTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000022 /* RunLedger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLedger.swift; sourceTree = "<group>"; };
+		F00000000000000000000023 /* RunLedgerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLedgerTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000024 /* BoundedTaskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundedTaskGroup.swift; sourceTree = "<group>"; };
+		F00000000000000000000025 /* BoundedTaskGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundedTaskGroupTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		P00000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000011 /* libwebp/PicToolWebP.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		P00000000000000000000005 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000003 /* PicTool */,
+				A00000000000000000000009 /* PicToolTests */,
+				A0000000000000000000000D /* ThirdParty */,
+				A00000000000000000000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00000000000000000000003 /* PicTool */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000001 /* PicToolApp.swift */,
+				A00000000000000000000005 /* App */,
+				A00000000000000000000006 /* Models */,
+				A00000000000000000000007 /* Features */,
+				A0000000000000000000000E /* Processing */,
+				A0000000000000000000000C /* Support */,
+				A00000000000000000000008 /* Resources */,
+				F0000000000000000000000E /* PicTool.entitlements */,
+			);
+			path = PicTool;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000010 /* PixShift.app */,
+				F00000000000000000000011 /* PicToolTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000005 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000002 /* MainWindow.swift */,
+				F00000000000000000000003 /* SettingsView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000004 /* PixelSize.swift */,
+				F00000000000000000000005 /* ResizeMode.swift */,
+				F00000000000000000000006 /* ImageItem.swift */,
+				F00000000000000000000017 /* ExportFormat.swift */,
+				F0000000000000000000001D /* CropPolicy.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000007 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A0000000000000000000000A /* Import */,
+				A0000000000000000000000B /* Configuration */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000008 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0000000000000000000000D /* Localizable.xcstrings */,
+				F00000000000000000000026 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000009 /* PicToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0000000000000000000000F /* ResizeModeTests.swift */,
+				F00000000000000000000015 /* WebPEncoderTests.swift */,
+				F00000000000000000000016 /* ImportScannerTests.swift */,
+				F0000000000000000000001A /* FilenameTemplateTests.swift */,
+				F0000000000000000000001B /* ImageProcessorTests.swift */,
+				F0000000000000000000001E /* CropPolicyTests.swift */,
+				F00000000000000000000021 /* DirectoryWritePreflightTests.swift */,
+				F00000000000000000000023 /* RunLedgerTests.swift */,
+				F00000000000000000000025 /* BoundedTaskGroupTests.swift */,
+			);
+			path = PicToolTests;
+			sourceTree = "<group>";
+		};
+		A0000000000000000000000A /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000007 /* ImportScanner.swift */,
+				F00000000000000000000008 /* ImportPanel.swift */,
+				F00000000000000000000009 /* ImportStore.swift */,
+				F0000000000000000000000A /* ImageQueueView.swift */,
+			);
+			path = Import;
+			sourceTree = "<group>";
+		};
+		A0000000000000000000000B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F0000000000000000000000B /* BatchConfiguration.swift */,
+				F0000000000000000000000C /* ConfigurationView.swift */,
+				F0000000000000000000001F /* CropEditorView.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A0000000000000000000000C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000012 /* PicTool-Bridging-Header.h */,
+				F00000000000000000000013 /* WebPEncoder.swift */,
+				F00000000000000000000018 /* FilenameTemplate.swift */,
+				F00000000000000000000020 /* DirectoryWritePreflight.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		A0000000000000000000000D /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000014 /* libwebp/PicToolWebP.xcframework */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		A0000000000000000000000E /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000019 /* ImageProcessor.swift */,
+				F0000000000000000000001C /* BatchProcessorStore.swift */,
+				F00000000000000000000022 /* RunLedger.swift */,
+				F00000000000000000000024 /* BoundedTaskGroup.swift */,
+			);
+			path = Processing;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000000000000000000010 /* PicTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C00000000000000000000002 /* Build configuration list for PBXNativeTarget "PicTool" */;
+			buildPhases = (
+				P00000000000000000000001 /* Sources */,
+				P00000000000000000000002 /* Frameworks */,
+				P00000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PicTool;
+			productName = PixShift;
+			productReference = F00000000000000000000010 /* PixShift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A00000000000000000000011 /* PicToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C00000000000000000000003 /* Build configuration list for PBXNativeTarget "PicToolTests" */;
+			buildPhases = (
+				P00000000000000000000004 /* Sources */,
+				P00000000000000000000005 /* Frameworks */,
+				P00000000000000000000006 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D00000000000000000000002 /* PBXTargetDependency */,
+			);
+			name = PicToolTests;
+			productName = PicToolTests;
+			productReference = F00000000000000000000011 /* PicToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					A00000000000000000000010 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					A00000000000000000000011 = {
+						CreatedOnToolsVersion = 26.0;
+						TestTargetID = A00000000000000000000010;
+					};
+				};
+			};
+			buildConfigurationList = C00000000000000000000001 /* Build configuration list for PBXProject "PicTool" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = A00000000000000000000002;
+			productRefGroup = A00000000000000000000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00000000000000000000010 /* PicTool */,
+				A00000000000000000000011 /* PicToolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		P00000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0000000000000000000000D /* Localizable.xcstrings in Resources */,
+				B00000000000000000000022 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		P00000000000000000000006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		P00000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000001 /* PicToolApp.swift in Sources */,
+				B00000000000000000000002 /* MainWindow.swift in Sources */,
+				B00000000000000000000003 /* SettingsView.swift in Sources */,
+				B00000000000000000000004 /* PixelSize.swift in Sources */,
+				B00000000000000000000005 /* ResizeMode.swift in Sources */,
+				B00000000000000000000006 /* ImageItem.swift in Sources */,
+				B00000000000000000000007 /* ImportScanner.swift in Sources */,
+				B00000000000000000000008 /* ImportPanel.swift in Sources */,
+				B00000000000000000000009 /* ImportStore.swift in Sources */,
+				B0000000000000000000000A /* ImageQueueView.swift in Sources */,
+				B0000000000000000000000B /* BatchConfiguration.swift in Sources */,
+				B0000000000000000000000C /* ConfigurationView.swift in Sources */,
+				B0000000000000000000000F /* WebPEncoder.swift in Sources */,
+				B00000000000000000000013 /* ExportFormat.swift in Sources */,
+				B00000000000000000000014 /* FilenameTemplate.swift in Sources */,
+				B00000000000000000000015 /* ImageProcessor.swift in Sources */,
+				B00000000000000000000018 /* BatchProcessorStore.swift in Sources */,
+				B00000000000000000000019 /* CropPolicy.swift in Sources */,
+				B0000000000000000000001B /* CropEditorView.swift in Sources */,
+				B0000000000000000000001C /* DirectoryWritePreflight.swift in Sources */,
+				B0000000000000000000001E /* RunLedger.swift in Sources */,
+				B00000000000000000000020 /* BoundedTaskGroup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		P00000000000000000000004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0000000000000000000000E /* ResizeModeTests.swift in Sources */,
+				B00000000000000000000010 /* WebPEncoderTests.swift in Sources */,
+				B00000000000000000000012 /* ImportScannerTests.swift in Sources */,
+				B00000000000000000000016 /* FilenameTemplateTests.swift in Sources */,
+				B00000000000000000000017 /* ImageProcessorTests.swift in Sources */,
+				B0000000000000000000001A /* CropPolicyTests.swift in Sources */,
+				B0000000000000000000001D /* DirectoryWritePreflightTests.swift in Sources */,
+				B0000000000000000000001F /* RunLedgerTests.swift in Sources */,
+				B00000000000000000000021 /* BoundedTaskGroupTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D00000000000000000000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000000000000000000010 /* PicTool */;
+			targetProxy = D00000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C10000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		C10000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		C10000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = PicTool/PicTool.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "PixShift: Resize & Convert Images";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elan.pictool;
+				PRODUCT_MODULE_NAME = PicTool;
+				PRODUCT_NAME = PixShift;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PicTool/Support/PicTool-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Debug;
+		};
+		C10000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = PicTool/PicTool.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "PixShift: Resize & Convert Images";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elan.pictool;
+				PRODUCT_MODULE_NAME = PicTool;
+				PRODUCT_NAME = PixShift;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PicTool/Support/PicTool-Bridging-Header.h";
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Release;
+		};
+		C10000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elan.pictool.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PixShift.app/Contents/MacOS/PixShift";
+			};
+			name = Debug;
+		};
+		C10000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elan.pictool.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PixShift.app/Contents/MacOS/PixShift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C00000000000000000000001 /* Build configuration list for PBXProject "PicTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C10000000000000000000001 /* Debug */,
+				C10000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C00000000000000000000002 /* Build configuration list for PBXNativeTarget "PicTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C10000000000000000000003 /* Debug */,
+				C10000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C00000000000000000000003 /* Build configuration list for PBXNativeTarget "PicToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C10000000000000000000005 /* Debug */,
+				C10000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000000000000000000001 /* Project object */;
+}
