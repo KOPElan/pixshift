@@ -406,13 +406,13 @@ final class BatchProcessorStore {
     nonisolated private static func failureDescription(_ error: Error) -> String {
         switch error {
         case ImageProcessingError.destinationExists:
-            return String(localized: "error.destination_exists")
+            return AppLocalization.string("error.destination_exists")
         case ImageProcessingError.encoderUnavailable:
-            return String(localized: "error.encoder_unavailable")
+            return AppLocalization.string("error.encoder_unavailable")
         case ImageProcessingError.unreadableSource, ImageProcessingError.invalidImage:
-            return String(localized: "error.unreadable_image")
+            return AppLocalization.string("error.unreadable_image")
         default:
-            return String(localized: "error.processing_failed")
+            return AppLocalization.string("error.processing_failed")
         }
     }
 }

@@ -59,7 +59,7 @@ final class ImportStore {
 
             if !result.errors.isEmpty {
                 lastError = String(
-                    format: String(localized: "import.partial_failure"),
+                    format: AppLocalization.shared.string("import.partial_failure"),
                     result.errors.count
                 )
             }

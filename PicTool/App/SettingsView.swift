@@ -2,6 +2,7 @@ import SwiftUI
 
 @MainActor
 struct SettingsView: View {
+    @Bindable var localization: AppLocalization
     @AppStorage(PreferenceKey.namingTemplate) private var namingTemplate = "{name}_{width}x{height}_{index}"
     @AppStorage(PreferenceKey.jpegQuality) private var jpegQuality = 85.0
     @AppStorage(PreferenceKey.webPQuality) private var webPQuality = 85.0
@@ -11,6 +12,15 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             Form {
+                Section("settings.language") {
+                    Picker("settings.language", selection: $localization.language) {
+                        Text("settings.language.system").tag(AppLanguage.system)
+                        Text(verbatim: "简体中文").tag(AppLanguage.simplifiedChinese)
+                        Text(verbatim: "繁體中文").tag(AppLanguage.traditionalChinese)
+                        Text(verbatim: "English").tag(AppLanguage.english)
+                    }
+                }
+
                 Section("settings.naming") {
                     TextField("settings.naming_template", text: $namingTemplate)
                     Text("settings.naming_help")
@@ -44,7 +54,7 @@ struct SettingsView: View {
             }
         }
         .scenePadding()
-        .frame(width: 520, height: 360)
+        .frame(width: 520, height: 460)
     }
 
     private func qualityRow(_ name: String, value: Binding<Double>) -> some View {
@@ -68,6 +78,7 @@ struct SettingsView: View {
 }
 
 enum PreferenceKey {
+    static let language = "preferences.language"
     static let namingTemplate = "preferences.namingTemplate"
     static let jpegQuality = "preferences.jpegQuality"
     static let webPQuality = "preferences.webPQuality"

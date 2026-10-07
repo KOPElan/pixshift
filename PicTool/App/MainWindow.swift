@@ -75,7 +75,7 @@ struct MainWindow: View {
                 importStore.clearError()
             }
         } message: {
-            Text(importStore.lastError ?? String(localized: "error.unknown"))
+            Text(importStore.lastError ?? AppLocalization.shared.string("error.unknown"))
         }
         .alert(
             "recovery.title",
@@ -92,7 +92,7 @@ struct MainWindow: View {
             }
         } message: {
             Text(String(
-                format: String(localized: "recovery.message"),
+                format: AppLocalization.shared.string("recovery.message"),
                 batchProcessor.recoveryFileCount
             ))
         }
@@ -105,15 +105,16 @@ struct MainWindow: View {
 @MainActor
 struct ImportCommands: Commands {
     let importStore: ImportStore
+    let language: AppLanguage
 
     var body: some Commands {
         CommandGroup(after: .newItem) {
-            Button("import.add_files") {
+            Button(AppLocalization.string("import.add_files", language: language)) {
                 importStore.chooseFiles()
             }
             .keyboardShortcut("o", modifiers: .command)
 
-            Button("import.add_folder") {
+            Button(AppLocalization.string("import.add_folder", language: language)) {
                 importStore.chooseFolders()
             }
             .keyboardShortcut("o", modifiers: [.command, .shift])

@@ -11,14 +11,14 @@ enum ExportFormat: String, CaseIterable, Codable, Identifiable, Sendable {
 
     var id: Self { self }
 
-    var title: String {
+    @MainActor var title: String {
         switch self {
-        case .keepOriginal: String(localized: "export.format.keepOriginal")
-        case .jpeg: String(localized: "export.format.jpeg")
-        case .png: String(localized: "export.format.png")
-        case .webP: String(localized: "export.format.webP")
-        case .heic: String(localized: "export.format.heic")
-        case .tiff: String(localized: "export.format.tiff")
+        case .keepOriginal: AppLocalization.shared.string("export.format.keepOriginal")
+        case .jpeg: AppLocalization.shared.string("export.format.jpeg")
+        case .png: AppLocalization.shared.string("export.format.png")
+        case .webP: AppLocalization.shared.string("export.format.webP")
+        case .heic: AppLocalization.shared.string("export.format.heic")
+        case .tiff: AppLocalization.shared.string("export.format.tiff")
         }
     }
 

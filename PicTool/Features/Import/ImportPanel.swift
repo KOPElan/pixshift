@@ -9,7 +9,7 @@ enum ImportPanel {
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = true
         panel.allowedContentTypes = [.jpeg, .png, .webP, .heic, .tiff]
-        panel.prompt = String(localized: "import.choose")
+        panel.prompt = AppLocalization.shared.string("import.choose")
         return await panel.begin() == .OK ? panel.urls : []
     }
 
@@ -18,7 +18,7 @@ enum ImportPanel {
         panel.canChooseFiles = false
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = true
-        panel.prompt = String(localized: "import.choose")
+        panel.prompt = AppLocalization.shared.string("import.choose")
         return await panel.begin() == .OK ? panel.urls : []
     }
 }
@@ -31,7 +31,7 @@ enum OutputPanel {
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
         panel.canCreateDirectories = true
-        panel.prompt = String(localized: "export.choose_folder")
+        panel.prompt = AppLocalization.shared.string("export.choose_folder")
         return await panel.begin() == .OK ? panel.url : nil
     }
 
@@ -43,9 +43,9 @@ enum OutputPanel {
         panel.allowsMultipleSelection = true
         panel.canCreateDirectories = false
         panel.directoryURL = required.first?.deletingLastPathComponent()
-        panel.prompt = String(localized: "permission.authorize")
+        panel.prompt = AppLocalization.shared.string("permission.authorize")
         panel.message = String(
-            format: String(localized: "permission.message"),
+            format: AppLocalization.shared.string("permission.message"),
             required.count
         )
         return await panel.begin() == .OK ? panel.urls : []

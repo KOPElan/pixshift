@@ -41,6 +41,8 @@
 		B00000000000000000000020 /* BoundedTaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000024 /* BoundedTaskGroup.swift */; };
 		B00000000000000000000021 /* BoundedTaskGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000025 /* BoundedTaskGroupTests.swift */; };
 		B00000000000000000000022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000026 /* Assets.xcassets */; };
+		B00000000000000000000023 /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000027 /* LocalizationTests.swift */; };
+		B00000000000000000000024 /* AppLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000028 /* AppLocalization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		F00000000000000000000024 /* BoundedTaskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundedTaskGroup.swift; sourceTree = "<group>"; };
 		F00000000000000000000025 /* BoundedTaskGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundedTaskGroupTests.swift; sourceTree = "<group>"; };
 		F00000000000000000000026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F00000000000000000000027 /* LocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
+		F00000000000000000000028 /* AppLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 			children = (
 				F00000000000000000000002 /* MainWindow.swift */,
 				F00000000000000000000003 /* SettingsView.swift */,
+				F00000000000000000000028 /* AppLocalization.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				F00000000000000000000021 /* DirectoryWritePreflightTests.swift */,
 				F00000000000000000000023 /* RunLedgerTests.swift */,
 				F00000000000000000000025 /* BoundedTaskGroupTests.swift */,
+				F00000000000000000000027 /* LocalizationTests.swift */,
 			);
 			path = PicToolTests;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = A00000000000000000000002;
 			productRefGroup = A00000000000000000000004 /* Products */;
@@ -357,6 +364,7 @@
 				B00000000000000000000001 /* PicToolApp.swift in Sources */,
 				B00000000000000000000002 /* MainWindow.swift in Sources */,
 				B00000000000000000000003 /* SettingsView.swift in Sources */,
+				B00000000000000000000024 /* AppLocalization.swift in Sources */,
 				B00000000000000000000004 /* PixelSize.swift in Sources */,
 				B00000000000000000000005 /* ResizeMode.swift in Sources */,
 				B00000000000000000000006 /* ImageItem.swift in Sources */,
@@ -392,6 +400,7 @@
 				B0000000000000000000001D /* DirectoryWritePreflightTests.swift in Sources */,
 				B0000000000000000000001F /* RunLedgerTests.swift in Sources */,
 				B00000000000000000000021 /* BoundedTaskGroupTests.swift in Sources */,
+				B00000000000000000000023 /* LocalizationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

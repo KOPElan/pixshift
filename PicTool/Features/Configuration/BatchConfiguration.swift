@@ -7,10 +7,10 @@ enum OutputDestinationMode: String, CaseIterable, Identifiable, Sendable {
 
     var id: Self { self }
 
-    var title: String {
+    @MainActor var title: String {
         switch self {
-        case .sourceFolder: String(localized: "export.destination.sourceFolder")
-        case .unifiedFolder: String(localized: "export.destination.unifiedFolder")
+        case .sourceFolder: AppLocalization.shared.string("export.destination.sourceFolder")
+        case .unifiedFolder: AppLocalization.shared.string("export.destination.unifiedFolder")
         }
     }
 }
@@ -28,14 +28,14 @@ final class BatchConfiguration {
 
         var id: Self { self }
 
-        var title: String {
+        @MainActor var title: String {
             switch self {
-            case .exact: String(localized: "resize.mode.exact")
-            case .percentage: String(localized: "resize.mode.percentage")
-            case .fixedWidth: String(localized: "resize.mode.fixedWidth")
-            case .fixedHeight: String(localized: "resize.mode.fixedHeight")
-            case .longestEdge: String(localized: "resize.mode.longestEdge")
-            case .shortestEdge: String(localized: "resize.mode.shortestEdge")
+            case .exact: AppLocalization.shared.string("resize.mode.exact")
+            case .percentage: AppLocalization.shared.string("resize.mode.percentage")
+            case .fixedWidth: AppLocalization.shared.string("resize.mode.fixedWidth")
+            case .fixedHeight: AppLocalization.shared.string("resize.mode.fixedHeight")
+            case .longestEdge: AppLocalization.shared.string("resize.mode.longestEdge")
+            case .shortestEdge: AppLocalization.shared.string("resize.mode.shortestEdge")
             }
         }
     }

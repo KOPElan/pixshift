@@ -34,9 +34,9 @@ enum ImageConfigurationError: Error, Equatable, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidDimensions:
-            String(localized: "error.invalid_dimensions")
+            AppLocalization.string("error.invalid_dimensions")
         case .invalidScale:
-            String(localized: "error.invalid_scale")
+            AppLocalization.string("error.invalid_scale")
         }
     }
 }

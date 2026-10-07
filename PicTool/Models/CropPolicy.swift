@@ -12,15 +12,15 @@ enum CropAspectPreset: String, CaseIterable, Codable, Identifiable, Sendable {
 
     var id: Self { self }
 
-    var title: String {
+    @MainActor var title: String {
         switch self {
-        case .original: String(localized: "crop.ratio.original")
-        case .free: String(localized: "crop.ratio.free")
-        case .square: String(localized: "crop.ratio.square")
-        case .fourThree: String(localized: "crop.ratio.four_three")
-        case .threeTwo: String(localized: "crop.ratio.three_two")
-        case .sixteenNine: String(localized: "crop.ratio.sixteen_nine")
-        case .custom: String(localized: "crop.ratio.custom")
+        case .original: AppLocalization.shared.string("crop.ratio.original")
+        case .free: AppLocalization.shared.string("crop.ratio.free")
+        case .square: AppLocalization.shared.string("crop.ratio.square")
+        case .fourThree: AppLocalization.shared.string("crop.ratio.four_three")
+        case .threeTwo: AppLocalization.shared.string("crop.ratio.three_two")
+        case .sixteenNine: AppLocalization.shared.string("crop.ratio.sixteen_nine")
+        case .custom: AppLocalization.shared.string("crop.ratio.custom")
         }
     }
 

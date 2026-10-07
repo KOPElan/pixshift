@@ -103,7 +103,7 @@ struct ConfigurationView: View {
                                 configuration.unifiedOutputURL = await OutputPanel.chooseDirectory()
                             }
                         } label: {
-                            Text(configuration.unifiedOutputURL?.lastPathComponent ?? String(localized: "export.choose_folder"))
+                            Text(configuration.unifiedOutputURL?.lastPathComponent ?? AppLocalization.shared.string("export.choose_folder"))
                                 .lineLimit(1)
                         }
                     }
@@ -156,24 +156,24 @@ struct ConfigurationView: View {
                     Text("\(batchProcessor.completedCount) / \(batchProcessor.totalCount)")
                         .monospacedDigit()
                     Spacer()
-                    Text(batchProcessor.phase == .cancelling ? "batch.cleaning" : "batch.processing")
+                    Text(LocalizedStringKey(batchProcessor.phase == .cancelling ? "batch.cleaning" : "batch.processing"))
                         .foregroundStyle(.secondary)
                 }
             case .completed:
                 Label("batch.completed", systemImage: "checkmark.circle.fill")
                     .foregroundStyle(.green)
-                Text(String(format: String(localized: "batch.result"), batchProcessor.successCount, batchProcessor.failures.count))
+                Text(String(format: AppLocalization.shared.string("batch.result"), batchProcessor.successCount, batchProcessor.failures.count))
             case .cancelled:
                 Label("batch.cancelled", systemImage: "xmark.circle")
             case .cleanupFailed:
                 Label("batch.cleanup_failed", systemImage: "exclamationmark.triangle.fill")
                     .foregroundStyle(.orange)
-                Text(String(format: String(localized: "batch.cleanup_failed_count"), batchProcessor.cleanupFailureCount))
+                Text(String(format: AppLocalization.shared.string("batch.cleanup_failed_count"), batchProcessor.cleanupFailureCount))
             case .authorizationFailed:
                 Label("permission.failed", systemImage: "folder.badge.questionmark")
                     .foregroundStyle(.orange)
                 Text(String(
-                    format: String(localized: "permission.failed_count"),
+                    format: AppLocalization.shared.string("permission.failed_count"),
                     batchProcessor.authorizationFailureCount
                 ))
             case .recoveryAvailable:
@@ -187,7 +187,7 @@ struct ConfigurationView: View {
                 Label("recovery.failed", systemImage: "exclamationmark.triangle.fill")
                     .foregroundStyle(.orange)
                 Text(String(
-                    format: String(localized: "recovery.failed_count"),
+                    format: AppLocalization.shared.string("recovery.failed_count"),
                     batchProcessor.recoveryFailureCount
                 ))
             case .ledgerFailed:

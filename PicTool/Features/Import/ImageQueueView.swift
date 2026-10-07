@@ -98,10 +98,10 @@ struct ImageQueueView: View {
 
     private var statusBar: some View {
         HStack {
-            Text("\(store.items.count) \(String(localized: "queue.valid_count"))")
+            Text("\(store.items.count) \(AppLocalization.shared.string("queue.valid_count"))")
             if store.ignoredCount > 0 {
                 Text("·")
-                Text("\(store.ignoredCount) \(String(localized: "queue.ignored_count"))")
+                Text("\(store.ignoredCount) \(AppLocalization.shared.string("queue.ignored_count"))")
             }
             Spacer()
             Button("queue.remove") {
