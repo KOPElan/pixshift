@@ -8,7 +8,8 @@
 
 ## 2026-10-07：产品名称
 
-- 用户可见名称更新为 `PixShift: Resize & Convert Images`。
+- Bundle 显示名为 `PixShift`，用于菜单栏、Dock、应用切换器和 Finder。
+- 主窗口标题单独设置为 `PixShift: Resize & Convert Images`。
 - 应用包与可执行文件名称更新为 `PixShift.app` 和 `PixShift`。
 - 保留原工程、scheme、bundle identifier 和 Application Support 内部路径，兼容既有偏好设置、统计与恢复台账。
 

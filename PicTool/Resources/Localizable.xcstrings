@@ -139,6 +139,22 @@
         }
       }
     },
+    "batch.preparing" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking output folders…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在检查导出目录…"
+          }
+        }
+      }
+    },
     "batch.processing" : {
       "localizations" : {
         "en" : {
@@ -155,7 +171,6 @@
         }
       }
     },
-    "batch.preparing" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Checking output folders…" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在检查导出目录…" } } } },
     "batch.result" : {
       "localizations" : {
         "en" : {
@@ -1297,6 +1312,89 @@
         }
       }
     },
+    "ledger.failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The safety ledger could not be updated. Processing stopped."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法更新安全运行台账，处理已停止。"
+          }
+        }
+      }
+    },
+    "permission.authorize" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authorize Folders"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授权文件夹"
+          }
+        }
+      }
+    },
+    "permission.failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folder authorization required"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要文件夹授权"
+          }
+        }
+      }
+    },
+    "permission.failed_count" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld output folders are not writable. No files were created."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld 个导出目录不可写，未创建任何文件。"
+          }
+        }
+      }
+    },
+    "permission.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PixShift needs access to %lld output folders. Select the folders, or a common parent folder, to continue."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PixShift 需要访问 %lld 个导出目录。请选择这些文件夹或它们的共同父文件夹以继续。"
+          }
+        }
+      }
+    },
+    "PixShift: Resize & Convert Images" : {
+
+    },
     "px" : {
 
     },
@@ -1412,19 +1510,134 @@
         }
       }
     },
-    "permission.authorize" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Authorize Folders" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "授权文件夹" } } } },
-    "permission.failed" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Folder authorization required" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "需要文件夹授权" } } } },
-    "permission.failed_count" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "%lld output folders are not writable. No files were created." } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "%lld 个导出目录不可写，未创建任何文件。" } } } },
-    "permission.message" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "PixShift needs access to %lld output folders. Select the folders, or a common parent folder, to continue." } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "PixShift 需要访问 %lld 个导出目录。请选择这些文件夹或它们的共同父文件夹以继续。" } } } },
-    "ledger.failed" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "The safety ledger could not be updated. Processing stopped." } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无法更新安全运行台账，处理已停止。" } } } },
-    "recovery.available" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Files from an interrupted run need attention" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "上次中断任务的文件需要处理" } } } },
-    "recovery.cleaning" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Cleaning files from the interrupted run…" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在清理上次中断任务的文件…" } } } },
-    "recovery.cleanup" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete Generated Files" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "删除生成文件" } } } },
-    "recovery.failed" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Some interrupted-run files could not be removed" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "部分中断任务文件无法清理" } } } },
-    "recovery.failed_count" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "%lld files remain. PixShift will keep the safety ledger." } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "仍有 %lld 个文件未清理，PixShift 将保留安全台账。" } } } },
-    "recovery.keep" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Keep Files" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保留文件" } } } },
-    "recovery.message" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "PixShift found %lld file records from a run that did not finish. Delete only those recorded files, or keep them and discard the safety ledger?" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "PixShift 发现上次未完成任务留下的 %lld 条文件记录。要仅删除这些已登记文件，还是保留文件并放弃安全台账？" } } } },
-    "recovery.title" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Interrupted Run Found" } }, "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "发现中断的任务" } } } },
+    "recovery.available" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Files from an interrupted run need attention"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上次中断任务的文件需要处理"
+          }
+        }
+      }
+    },
+    "recovery.cleaning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cleaning files from the interrupted run…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在清理上次中断任务的文件…"
+          }
+        }
+      }
+    },
+    "recovery.cleanup" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Generated Files"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除生成文件"
+          }
+        }
+      }
+    },
+    "recovery.failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Some interrupted-run files could not be removed"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "部分中断任务文件无法清理"
+          }
+        }
+      }
+    },
+    "recovery.failed_count" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld files remain. PixShift will keep the safety ledger."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仍有 %lld 个文件未清理，PixShift 将保留安全台账。"
+          }
+        }
+      }
+    },
+    "recovery.keep" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep Files"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保留文件"
+          }
+        }
+      }
+    },
+    "recovery.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PixShift found %lld file records from a run that did not finish. Delete only those recorded files, or keep them and discard the safety ledger?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PixShift 发现上次未完成任务留下的 %lld 条文件记录。要仅删除这些已登记文件，还是保留文件并放弃安全台账？"
+          }
+        }
+      }
+    },
+    "recovery.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interrupted Run Found"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "发现中断的任务"
+          }
+        }
+      }
+    },
     "resize.allow_upscaling" : {
       "localizations" : {
         "en" : {

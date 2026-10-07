@@ -7,7 +7,7 @@ struct PixShiftApp: App {
     @State private var batchProcessor = BatchProcessorStore()
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup("PixShift: Resize & Convert Images") {
             MainWindow(
                 importStore: importStore,
                 configuration: configuration,
