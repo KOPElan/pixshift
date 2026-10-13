@@ -194,11 +194,17 @@ final class BatchConfiguration {
             defaults.removeObject(forKey: PreferenceKey.outputDirectoryBookmark)
             return
         }
+        let accessed = unifiedOutputURL.startAccessingSecurityScopedResource()
+        defer { if accessed { unifiedOutputURL.stopAccessingSecurityScopedResource() } }
         guard let bookmark = try? unifiedOutputURL.bookmarkData(
             options: .withSecurityScope,
             includingResourceValuesForKeys: nil,
             relativeTo: nil
-        ) else { return }
+        ) else {
+            // Never restore a previous folder after selecting a new one whose bookmark failed.
+            defaults.removeObject(forKey: PreferenceKey.outputDirectoryBookmark)
+            return
+        }
         defaults.set(bookmark, forKey: PreferenceKey.outputDirectoryBookmark)
     }
 
@@ -207,12 +213,27 @@ final class BatchConfiguration {
             return nil
         }
         var isStale = false
-        return try? URL(
+        guard let directory = try? URL(
             resolvingBookmarkData: bookmark,
             options: .withSecurityScope,
             relativeTo: nil,
             bookmarkDataIsStale: &isStale
-        )
+        ) else {
+            defaults.removeObject(forKey: PreferenceKey.outputDirectoryBookmark)
+            return nil
+        }
+        if isStale {
+            let accessed = directory.startAccessingSecurityScopedResource()
+            defer { if accessed { directory.stopAccessingSecurityScopedResource() } }
+            if let refreshed = try? directory.bookmarkData(
+                options: .withSecurityScope,
+                includingResourceValuesForKeys: nil,
+                relativeTo: nil
+            ) {
+                defaults.set(refreshed, forKey: PreferenceKey.outputDirectoryBookmark)
+            }
+        }
+        return directory
     }
 
     private static func integer(_ defaults: UserDefaults, key: String, fallback: Int) -> Int {

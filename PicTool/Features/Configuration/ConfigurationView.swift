@@ -100,7 +100,9 @@ struct ConfigurationView: View {
                     LabeledContent("export.folder") {
                         Button {
                             Task {
-                                configuration.unifiedOutputURL = await OutputPanel.chooseDirectory()
+                                if let directory = await OutputPanel.chooseDirectory() {
+                                    configuration.unifiedOutputURL = directory
+                                }
                             }
                         } label: {
                             Text(configuration.unifiedOutputURL?.lastPathComponent ?? AppLocalization.shared.string("export.choose_folder"))

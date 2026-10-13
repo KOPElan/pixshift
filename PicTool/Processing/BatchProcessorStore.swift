@@ -152,7 +152,8 @@ final class BatchProcessorStore {
                 quality: quality,
                 template: template,
                 destinationMode: destinationMode,
-                unifiedOutputURL: unifiedOutputURL
+                unifiedOutputURL: unifiedOutputURL,
+                configuration: configuration
             )
         }
     }
@@ -166,8 +167,10 @@ final class BatchProcessorStore {
         quality: Double,
         template: FilenameTemplate,
         destinationMode: OutputDestinationMode,
-        unifiedOutputURL: URL?
+        unifiedOutputURL: URL?,
+        configuration: BatchConfiguration
     ) async {
+        var unifiedOutputURL = unifiedOutputURL
         var heldURLs = seeds.map(\.accessRootURL)
         if let unifiedOutputURL { heldURLs.append(unifiedOutputURL) }
         var activeScopes = activateSecurityScopes(heldURLs)
@@ -176,7 +179,7 @@ final class BatchProcessorStore {
             task = nil
         }
 
-        let destinations: [URL]
+        var destinations: [URL]
         switch destinationMode {
         case .sourceFolder:
             destinations = seeds.map { $0.sourceURL.deletingLastPathComponent() }
@@ -194,6 +197,15 @@ final class BatchProcessorStore {
             let grantedURLs = await OutputPanel.authorizeDirectories(required: missing)
             heldURLs.append(contentsOf: grantedURLs)
             activeScopes.append(contentsOf: activateSecurityScopes(grantedURLs))
+            if destinationMode == .unifiedFolder,
+               let authorizedDirectory = grantedURLs.first(where: {
+                   $0.standardizedFileURL.path == unifiedOutputURL?.standardizedFileURL.path
+               }) {
+                // Use and persist the newly granted URL rather than retaining an old bookmark URL.
+                unifiedOutputURL = authorizedDirectory
+                destinations = [authorizedDirectory]
+                configuration.unifiedOutputURL = authorizedDirectory
+            }
             missing = await preflight.missingWritableDirectories(destinations)
         }
 

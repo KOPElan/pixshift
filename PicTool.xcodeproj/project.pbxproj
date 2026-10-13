@@ -43,6 +43,7 @@
 		B00000000000000000000022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000026 /* Assets.xcassets */; };
 		B00000000000000000000023 /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000027 /* LocalizationTests.swift */; };
 		B00000000000000000000024 /* AppLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000028 /* AppLocalization.swift */; };
+		B00000000000000000000025 /* OutputFolderAuthorizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000029 /* OutputFolderAuthorizationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		F00000000000000000000026 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F00000000000000000000027 /* LocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
 		F00000000000000000000028 /* AppLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalization.swift; sourceTree = "<group>"; };
+		F00000000000000000000029 /* OutputFolderAuthorizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputFolderAuthorizationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				F00000000000000000000023 /* RunLedgerTests.swift */,
 				F00000000000000000000025 /* BoundedTaskGroupTests.swift */,
 				F00000000000000000000027 /* LocalizationTests.swift */,
+				F00000000000000000000029 /* OutputFolderAuthorizationTests.swift */,
 			);
 			path = PicToolTests;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				B0000000000000000000001F /* RunLedgerTests.swift in Sources */,
 				B00000000000000000000021 /* BoundedTaskGroupTests.swift in Sources */,
 				B00000000000000000000023 /* LocalizationTests.swift in Sources */,
+				B00000000000000000000025 /* OutputFolderAuthorizationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
