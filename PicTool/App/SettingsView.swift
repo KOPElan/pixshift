@@ -93,6 +93,7 @@ enum PreferenceKey {
     static let exportFormat = "lastBatch.exportFormat"
     static let exportQuality = "lastBatch.exportQuality"
     static let destinationMode = "lastBatch.destinationMode"
+    static let outputDestinationWasChosen = "preferences.outputDestinationWasChosen"
     static let outputDirectoryBookmark = "preferences.outputDirectoryBookmark"
     static let cropEnabled = "lastBatch.cropEnabled"
     static let cropPreset = "lastBatch.cropPreset"

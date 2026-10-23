@@ -109,6 +109,16 @@ struct ConfigurationView: View {
                                 .lineLimit(1)
                         }
                     }
+                    if let directory = configuration.unifiedOutputURL {
+                        Text(directory.path)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                            .textSelection(.enabled)
+                    } else {
+                        Text("export.choose_folder_help")
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                    }
                 }
 
                 TextField("export.naming_template", text: $configuration.namingTemplate)

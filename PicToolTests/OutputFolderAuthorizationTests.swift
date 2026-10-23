@@ -6,6 +6,53 @@ import XCTest
 
 final class OutputFolderAuthorizationTests: XCTestCase {
     @MainActor
+    func testFirstLaunchRequiresOutputFolderBeforeStarting() throws {
+        let suite = "OutputFolderAuthorizationTests.\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let configuration = BatchConfiguration(defaults: defaults)
+
+        XCTAssertEqual(configuration.destinationMode, .unifiedFolder)
+        XCTAssertNil(configuration.unifiedOutputURL)
+        XCTAssertFalse(configuration.isValid)
+        let processor = BatchProcessorStore()
+        processor.start(items: [], configuration: configuration)
+        XCTAssertEqual(processor.phase, .idle)
+    }
+
+    @MainActor
+    func testLegacySourceFolderDefaultRequiresNewOutputChoice() throws {
+        let suite = "OutputFolderAuthorizationTests.\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        defaults.set(OutputDestinationMode.sourceFolder.rawValue, forKey: PreferenceKey.destinationMode)
+
+        let configuration = BatchConfiguration(defaults: defaults)
+
+        XCTAssertEqual(configuration.destinationMode, .unifiedFolder)
+        XCTAssertNil(configuration.unifiedOutputURL)
+        XCTAssertFalse(configuration.isValid)
+        XCTAssertFalse(defaults.bool(forKey: PreferenceKey.outputDestinationWasChosen))
+    }
+
+    @MainActor
+    func testExplicitSourceFolderChoiceIsRemembered() throws {
+        let suite = "OutputFolderAuthorizationTests.\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))
+        defer { defaults.removePersistentDomain(forName: suite) }
+        let configuration = BatchConfiguration(defaults: defaults)
+        configuration.destinationMode = .sourceFolder
+
+        let restored = BatchConfiguration(defaults: defaults)
+
+        XCTAssertEqual(restored.destinationMode, .sourceFolder)
+        XCTAssertTrue(restored.isValid)
+        restored.destinationMode = .unifiedFolder
+        XCTAssertFalse(restored.isValid)
+        XCTAssertFalse(BatchConfiguration(defaults: defaults).isValid)
+    }
+
+    @MainActor
     func testRestoredOutputFolderCanExportFromSeparateSourceFolder() async throws {
         let suite = "OutputFolderAuthorizationTests.\(UUID().uuidString)"
         let defaults = try XCTUnwrap(UserDefaults(suiteName: suite))

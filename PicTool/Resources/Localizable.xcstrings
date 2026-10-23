@@ -1326,6 +1326,28 @@
         }
       }
     },
+    "export.choose_folder_help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose an output folder before starting. Your selection will be remembered."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开始处理前请选择输出文件夹，应用会记住你的选择。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始處理前請選擇輸出資料夾，App 會記住你的選擇。"
+          }
+        }
+      }
+    },
     "export.destination" : {
       "localizations" : {
         "en" : {

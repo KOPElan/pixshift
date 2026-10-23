@@ -2,8 +2,8 @@ import Foundation
 import Observation
 
 enum OutputDestinationMode: String, CaseIterable, Identifiable, Sendable {
-    case sourceFolder
     case unifiedFolder
+    case sourceFolder
 
     var id: Self { self }
 
@@ -66,8 +66,11 @@ final class BatchConfiguration {
     var quality = 85.0 {
         didSet { defaults.set(quality, forKey: PreferenceKey.exportQuality) }
     }
-    var destinationMode: OutputDestinationMode = .sourceFolder {
-        didSet { defaults.set(destinationMode.rawValue, forKey: PreferenceKey.destinationMode) }
+    var destinationMode: OutputDestinationMode = .unifiedFolder {
+        didSet {
+            defaults.set(destinationMode.rawValue, forKey: PreferenceKey.destinationMode)
+            defaults.set(true, forKey: PreferenceKey.outputDestinationWasChosen)
+        }
     }
     var unifiedOutputURL: URL? {
         didSet { persistOutputDirectoryBookmark() }
@@ -115,7 +118,9 @@ final class BatchConfiguration {
         }
         quality = Self.double(defaults, key: PreferenceKey.exportQuality, fallback: quality)
         if let rawDestination = defaults.string(forKey: PreferenceKey.destinationMode),
-           let savedDestination = OutputDestinationMode(rawValue: rawDestination) {
+           let savedDestination = OutputDestinationMode(rawValue: rawDestination),
+           savedDestination != .sourceFolder || defaults.bool(forKey: PreferenceKey.outputDestinationWasChosen) {
+            // Older versions defaulted to sourceFolder without an explicit output choice.
             destinationMode = savedDestination
         }
         if let template = defaults.string(forKey: PreferenceKey.namingTemplate),
