@@ -144,6 +144,10 @@ final class BatchConfiguration {
     }
 
     var isValid: Bool {
+        hasValidProcessingSettings && (destinationMode == .sourceFolder || unifiedOutputURL != nil)
+    }
+
+    var hasValidProcessingSettings: Bool {
         let resizeIsValid: Bool = switch mode {
         case .exact:
             width > 0 && height > 0
@@ -152,14 +156,12 @@ final class BatchConfiguration {
         case .fixedWidth, .fixedHeight, .longestEdge, .shortestEdge:
             edge > 0
         }
-        let destinationIsValid = destinationMode == .sourceFolder || unifiedOutputURL != nil
         let templateIsValid = (try? FilenameTemplate(namingTemplate)) != nil
         let cropIsValid = !cropEnabled
             || cropPreset != .custom
             || (cropCustomWidth.isFinite && cropCustomHeight.isFinite
                 && cropCustomWidth > 0 && cropCustomHeight > 0)
         return resizeIsValid
-            && destinationIsValid
             && templateIsValid
             && cropIsValid
             && quality.isFinite
@@ -167,7 +169,7 @@ final class BatchConfiguration {
     }
 
     var resizeMode: ResizeMode? {
-        guard isValid else { return nil }
+        guard hasValidProcessingSettings else { return nil }
         switch mode {
         case .exact:
             return ResizeMode.exact(width: width, height: height)

@@ -58,7 +58,7 @@ struct MainWindow: View {
                 }
                 .disabled(
                     importStore.items.isEmpty
-                        || !configuration.isValid
+                        || !configuration.hasValidProcessingSettings
                         || batchProcessor.phase.isActive
                 )
                 .keyboardShortcut(.return, modifiers: .command)

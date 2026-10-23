@@ -32,6 +32,7 @@ enum OutputPanel {
         panel.allowsMultipleSelection = false
         panel.canCreateDirectories = true
         panel.prompt = AppLocalization.shared.string("export.choose_folder")
+        panel.message = AppLocalization.shared.string("export.choose_folder_message")
         return await panel.begin() == .OK ? panel.url : nil
     }
 

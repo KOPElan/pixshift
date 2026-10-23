@@ -49,8 +49,19 @@ private enum BatchJobOutcome: Sendable {
 @Observable
 final class BatchProcessorStore {
     private let preflight = DirectoryWritePreflight()
-    private let ledger = RunLedger()
+    private let ledger: RunLedger
+    private let chooseOutputDirectory: @MainActor () async -> URL?
     private var task: Task<Void, Never>?
+
+    init(
+        ledger: RunLedger = RunLedger(),
+        chooseOutputDirectory: @escaping @MainActor () async -> URL? = {
+            await OutputPanel.chooseDirectory()
+        }
+    ) {
+        self.ledger = ledger
+        self.chooseOutputDirectory = chooseOutputDirectory
+    }
 
     var phase: BatchPhase = .idle
     var totalCount = 0
@@ -117,9 +128,10 @@ final class BatchProcessorStore {
 
     func start(items: [ImageItem], configuration: BatchConfiguration) {
         guard task == nil,
+              !items.isEmpty,
               let resizeMode = configuration.resizeMode,
               let template = try? FilenameTemplate(configuration.namingTemplate),
-              configuration.isValid else {
+              configuration.hasValidProcessingSettings else {
             return
         }
 
@@ -143,6 +155,16 @@ final class BatchProcessorStore {
         phase = .preparing
         task = Task { [weak self] in
             guard let self else { return }
+            defer { task = nil }
+            var outputDirectory = unifiedOutputURL
+            if destinationMode == .unifiedFolder, outputDirectory == nil {
+                guard let directory = await chooseOutputDirectory(), !Task.isCancelled else {
+                    phase = .idle
+                    return
+                }
+                configuration.unifiedOutputURL = directory
+                outputDirectory = directory
+            }
             await self.prepareAndRun(
                 seeds: seeds,
                 resizeMode: resizeMode,
@@ -152,7 +174,7 @@ final class BatchProcessorStore {
                 quality: quality,
                 template: template,
                 destinationMode: destinationMode,
-                unifiedOutputURL: unifiedOutputURL,
+                unifiedOutputURL: outputDirectory,
                 configuration: configuration
             )
         }
@@ -176,7 +198,6 @@ final class BatchProcessorStore {
         var activeScopes = activateSecurityScopes(heldURLs)
         defer {
             for url in activeScopes { url.stopAccessingSecurityScopedResource() }
-            task = nil
         }
 
         var destinations: [URL]

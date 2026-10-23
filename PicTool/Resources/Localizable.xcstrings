@@ -1331,19 +1331,41 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Choose an output folder before starting. Your selection will be remembered."
+            "value" : "Click Start to choose an output folder. Your selection will be remembered."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "开始处理前请选择输出文件夹，应用会记住你的选择。"
+            "value" : "尚未设置输出文件夹，点击“开始处理”时会提示选择。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "開始處理前請選擇輸出資料夾，App 會記住你的選擇。"
+            "value" : "尚未設定輸出資料夾，點按「開始處理」時會提示選擇。"
+          }
+        }
+      }
+    },
+    "export.choose_folder_message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose where to save the processed images."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请选择处理后的图片保存位置。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請選擇處理後的圖片儲存位置。"
           }
         }
       }
